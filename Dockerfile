@@ -26,10 +26,6 @@ RUN pip install bitsandbytes && \
     pip install datasets scipy trl huggingface_hub && \
     pip install pandas
 
-# Remove any incompatible Triton version and install a compatible one from GitHub.
-RUN pip uninstall -y triton && \
-    pip install git+https://github.com/openai/triton.git@2.0.0.dev20211201
-
 # Set the working directory
 WORKDIR /app
 
