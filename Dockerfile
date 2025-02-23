@@ -27,14 +27,14 @@ RUN pip install bitsandbytes && \
     pip install pandas
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /ws
 
 # Copy the application code into the container
-COPY . /app
+COPY . /ws
 
 # Create a directory for results and mark it as a volume
-RUN mkdir -p /app/results
-VOLUME ["/app/results"]
+RUN mkdir -p /ws/results
+VOLUME ["/ws/results"]
 
 # Set the default command to run your application
 CMD ["/bin/bash"]
