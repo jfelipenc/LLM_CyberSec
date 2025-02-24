@@ -10,13 +10,14 @@ RUN apt-get update && apt-get install -y \
     libsm6 \
     libxext6 \
     libxrender-dev \
+    build-essential \
  && rm -rf /var/lib/apt/lists/*
 
 # Upgrade pip
 RUN pip install --upgrade pip
 
 # Install PyTorch with CUDA support (adjust the extra-index-url if needed)
-RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu117
+RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118
 
 # Install the other required Python packages
 RUN pip install bitsandbytes && \
